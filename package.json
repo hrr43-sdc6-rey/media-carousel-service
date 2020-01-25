@@ -7,6 +7,7 @@
     "start": "node server/index.js",
     "start:dev": "nodemon server/index.js -w server",
     "build:dev": "webpack -d --watch",
+    "seedDb": "node database/seedDatabase.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
