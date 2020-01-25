@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PhotoCarousel from './components/PhotoCarousel.jsx';
-import FooterBar from './components/FooterBar.jsx';
 import './styles/styles.css';
 
 class App extends React.Component {
@@ -9,7 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <PhotoCarousel />
-        <FooterBar />
+        <ScrollBar />
       </div>
     )
   }
