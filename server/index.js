@@ -8,8 +8,8 @@ app.use(express.static('./public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/images', (req, res) => {
-  db.getImages()
+app.get('/:id', (req, res) => {
+  db.getImages(req.params.id)
     .then((data) => {
       res.status(200).send(data);
     })

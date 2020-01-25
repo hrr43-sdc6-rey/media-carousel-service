@@ -12,10 +12,11 @@ connection.connect(err => {
   }
 });
 
-const getImages = () => {
+const getImages = (expId) => {
   return new Promise((resolve, reject) => {
-    var queryString = 'select * from images';
-    connection.query(queryString, (err, data) => {
+    let queryString = 'select * from images where experience_id = ?';
+    let experience_id = expId;
+    connection.query(queryString, experience_id, (err, data) => {
       if (err) {
         reject(err);
       } else {
