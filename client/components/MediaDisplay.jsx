@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PhotoCarousel extends React.Component {
+class MediaDisplay extends React.Component {
   constructor() {
     super();
   }
@@ -14,4 +14,4 @@ class PhotoCarousel extends React.Component {
   }
 };
 
-export default PhotoCarousel;
+export default MediaDisplay;
