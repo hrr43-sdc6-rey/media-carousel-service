@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
 
 function FooterBar() {
   const [isLaughing, setIsLaughing] = useState(true);
