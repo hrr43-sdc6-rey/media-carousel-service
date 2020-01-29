@@ -2,6 +2,8 @@ CREATE DATABASE airbnb;
 
 USE airbnb;
 
+DROP TABLE IF EXISTS 'images';
+
 CREATE TABLE images (
   id INTEGER NOT NULL AUTO_INCREMENT,
   image_path varchar(100) NOT NULL,
