@@ -3,16 +3,15 @@ import styled from 'styled-components';
 
 
 function FooterBar() {
-  const [isLaughing, setIsLaughing] = useState(true);
-  // React Hooks - useState returns an array, first item is the state and second is a function to set the state
-  // useState(true) initializes the state
+  const [isBlack, setIsBlack] = useState(false);
+
   const toggle = () => {
-    setIsLaughing(!isLaughing);
+
   }
 
   return (
-    <div>
-      <button onClick={toggle}>{isLaughing ? "😂" : "🥶"}</button>
+    <div className="footer-bar">
+      <p>Footer</p>
     </div>
   )
 }
