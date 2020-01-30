@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const db = require('../database/index.js');
+// const mongo = require('../database/mongodindex.js');
 const bodyParser = require('body-parser');
 
 app.use(express.static('./public'));

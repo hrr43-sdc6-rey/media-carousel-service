@@ -1,33 +1,21 @@
-const mysqlConfig = require('../config/mysqlconfig.js');
-const mysql = require('mysql');
+const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+const Experiences = require('./experience.js');
 
+mongoose.set('useCreateIndex', true);
 
-const connection = mysql.createConnection(mysqlConfig);
+let mongooseConnection = 'mongodb://localhost/fec-airbnb';
 
-connection.connect(err => {
-  if(err) {
-    throw err;
-  } else {
-    console.log('mySQL connected');
-  }
-});
+mongoose
+  .connect(mongooseConnection, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Connection error: ', err));
 
-const getImages = (expId) => {
-  return new Promise((resolve, reject) => {
-    let queryString = 'select * from images where experience_id = ?';
-    let experience_id = expId;
-    connection.query(queryString, experience_id, (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
-};
+const db = mongoose.connection;
 
-module.exports = {
-  getImages: getImages,
-}
+module.exports = db;
 
 

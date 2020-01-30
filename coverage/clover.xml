@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1580334788085" clover="3.2.0">
-  <project timestamp="1580334788085" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1580343511678" clover="3.2.0">
+  <project timestamp="1580343511678" name="All files">
+    <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4" elements="12" coveredelements="12" complexity="0" loc="8" ncloc="8" packages="1" files="3" classes="3"/>
+    <file name="InfoAboveMediaDisplay.jsx" path="/Users/yerxiong/code/yer-space/HRR43/team-leia/Media-Carousel-Service/client/components/InfoAboveMediaDisplay.jsx">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+    </file>
+    <file name="InfoBelowMediaDisplay.jsx" path="/Users/yerxiong/code/yer-space/HRR43/team-leia/Media-Carousel-Service/client/components/InfoBelowMediaDisplay.jsx">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+    </file>
+    <file name="MediaDisplay.jsx" path="/Users/yerxiong/code/yer-space/HRR43/team-leia/Media-Carousel-Service/client/components/MediaDisplay.jsx">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+    </file>
   </project>
 </coverage>
