@@ -27,7 +27,7 @@ const experienceSchema = new mongoose.Schema({
   videoUrl: String
 });
 
-const Experiences = mongoose.model('Experiences', experienceSchema);
+const Experience = mongoose.model('Experience', experienceSchema);
 
 
-module.exports = Experiences;
+module.exports = Experience;

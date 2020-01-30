@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-const Experiences = require('./experience.js');
+const Experience = require('./experience.js');
 
 mongoose.set('useCreateIndex', true);
+
+const db = mongoose.connection;
 
 let mongooseConnection = 'mongodb://localhost/fec-airbnb';
 
@@ -14,8 +16,20 @@ mongoose
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Connection error: ', err));
 
-const db = mongoose.connection;
+const getExperiences = (expId) => {
+  let experienceId = expId;
 
-module.exports = db;
+  return new Promise((resolve, reject) => {
+    Experience.find({ experienceId })
+      .exec((err, data) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(data);
+      });
+  });
+};
+
+module.exports = { db, getExperiences };
 
 
