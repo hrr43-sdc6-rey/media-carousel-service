@@ -9,23 +9,23 @@ class MediaDisplay extends React.Component {
 
   render() {
     return (
-      <div class="image-wrapper">
-        <section class="image-section">
-          <div class="image-cover">
+      <div className="image-wrapper">
+        <section className="image-section">
+          <div className="image-cover">
             <img src={this.props.images[0]} alt="an image of something" />
           </div>
-          <div class="image-cover">
+          <div className="image-cover">
             <img src={this.props.images[1]} alt="an image of something" />
           </div>
-          <div class="vertical-stack-images">
-            <div class="image-cover">
+          <div className="vertical-stack-images">
+            <div className="image-cover">
               <img src={this.props.images[2]} alt="an image of something" />
             </div>
-            <div class="image-cover">
+            <div className="image-cover">
               <img src={this.props.images[3]} alt="an image of something" />
             </div>
           </div>
-          <div class="image-cover">
+          <div className="image-cover">
             <img src={this.props.images[4]} alt="an image of something" />
           </div>
         </section>

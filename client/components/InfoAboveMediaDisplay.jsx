@@ -15,13 +15,15 @@ const experienceHardCodedData = {
   activity: 'History'
 }
 
-function InfoAboveMediaDisplay () {
-  const [experienceId, setExperienceId] = useState(experienceHardCodedData);
+function InfoAboveMediaDisplay (props) {
+  // const [experienceId, setExperienceId] = useState(experienceHardCodedData);
 
   // useEffect to perform API call to get data
   // useEffect(() => {
 
   // });
+
+
 
   return (
     <div>
@@ -29,7 +31,7 @@ function InfoAboveMediaDisplay () {
         <ul className="listCityAndActivity">
           <li className="listItem">
             <a>
-              <span className="city-country">Mexico City, Mexico</span>
+              <span className="city-country">{props.experience.city}, {props.experience.country}</span>
             </a>
           </li>
           <li className="listItem">
@@ -37,7 +39,7 @@ function InfoAboveMediaDisplay () {
           </li>
           <li className="listItem">
             <a>
-              <span className="category">Arts and Culture</span>
+              <span className="category">{props.experience.category}</span>
             </a>
           </li>
           <li className="listItem">
@@ -45,7 +47,7 @@ function InfoAboveMediaDisplay () {
           </li>
           <li className="listItem">
             <a>
-              <span className="activity">Art Walk</span>
+              <span className="activity">{props.experience.activity}</span>
             </a>
           </li>
         </ul>

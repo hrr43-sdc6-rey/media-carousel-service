@@ -9,44 +9,6 @@ import './styles/styles.css';
 import styled from 'styled-components';
 
 
-const dummyData = [
-  {
-      "includes": [
-          "Reiciendis",
-          "Commodi",
-          "Sequi",
-          "Quos"
-      ],
-      "hostedLanguages": [
-          "Voluptatem",
-          "Enim"
-      ],
-      "imageUrls": [
-          "https://fec-media.s3.amazonaws.com/photo1.jpg",
-          "https://fec-media.s3.amazonaws.com/photo17.jpg",
-          "https://fec-media.s3.amazonaws.com/photo9.jpg",
-          "https://fec-media.s3.amazonaws.com/photo14.jpg",
-          "https://fec-media.s3.amazonaws.com/photo3.jpg"
-      ],
-      "_id": "5e333fe3d342d53e6b61c7e7",
-      "experienceId": 4,
-      "title": "Officiis Earum Mollitia",
-      "city": "East Lysannefort",
-      "state": "Arizona",
-      "country": "Thailand",
-      "category": "Itaque Harum Sint",
-      "activity": "Quae In Beatae",
-      "averageRating": 3,
-      "numberOfReviews": 47,
-      "duration": 4,
-      "groupSize": 40,
-      "cuisine": "Sint",
-      "costPerPerson": 264,
-      "videoUrl": "https://arnold.biz",
-      "__v": 0
-  }
-]
-
 class App extends React.Component {
   constructor(props) {
     super(props);
