@@ -12,21 +12,26 @@ class MediaDisplay extends React.Component {
       <div className="image-wrapper">
         <section className="image-section">
           <div className="image-cover">
-            <img src={this.props.images[0]} alt="an image of something" />
+            {/* <img src={this.props.images[0]} alt="an image of something" /> */}
+            <img src="https://picsum.photos/200/300" />
           </div>
           <div className="image-cover">
-            <img src={this.props.images[1]} alt="an image of something" />
+            {/* <img src={this.props.images[1]} alt="an image of something" /> */}
+            <img src="https://picsum.photos/200/300" />
           </div>
           <div className="vertical-stack-images">
             <div className="image-cover">
-              <img src={this.props.images[2]} alt="an image of something" />
+              {/* <img src={this.props.images[2]} alt="an image of something" /> */}
+              <img src="https://picsum.photos/200/300" />
             </div>
             <div className="image-cover">
-              <img src={this.props.images[3]} alt="an image of something" />
+              {/* <img src={this.props.images[3]} alt="an image of something" /> */}
+              <img src="https://picsum.photos/200/300" />
             </div>
           </div>
           <div className="image-cover">
-            <img src={this.props.images[4]} alt="an image of something" />
+            {/* <img src={this.props.images[4]} alt="an image of something" /> */}
+            <img src="https://picsum.photos/200/300" />
           </div>
         </section>
       </div>

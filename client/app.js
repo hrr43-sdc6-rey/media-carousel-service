@@ -8,6 +8,13 @@ import InfoBelowMediaDisplay from './components/InfoBelowMediaDisplay.jsx';
 import './styles/styles.css';
 import styled from 'styled-components';
 
+const Wrapper = styled.section`
+margin-left: auto;
+margin-right: auto;
+padding-left: 50px;
+padding-right: 50px
+background: black;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -40,20 +47,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="main-container">
-        <div>
+        <Wrapper>
           <InfoAboveMediaDisplay experience={this.state.experience} />
-        </div>
-        <div>
+        </Wrapper>
+        <Wrapper>
           <MediaDisplay images={this.state.images} />
-        </div>
-        <div>
+        </Wrapper>
+        <Wrapper>
           <InfoBelowMediaDisplay experience={this.state.experience} />
-        </div>
-        <div>
+        </Wrapper>
+        <Wrapper>
           {/* <FooterBar /> */}
-        </div>
-        <div>
-        </div>
+        </Wrapper>
       </div>
     )
   }

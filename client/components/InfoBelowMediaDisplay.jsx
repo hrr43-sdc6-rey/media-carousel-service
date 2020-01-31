@@ -2,9 +2,17 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-padding: 4em;
+margin-top: 20px;
 background: black;
 display: flex;
+`;
+
+const FirstCol = styled.div`
+  flex-basis: 35%;
+`;
+
+const SecondCol = styled.div`
+  flex-basis: 65%;
 `;
 
 function InfoBelowMediaDisplay (props) {
@@ -12,18 +20,17 @@ function InfoBelowMediaDisplay (props) {
 
   return (
     <div>
-      <section className="infoBelow">
       <Wrapper>
-        <div className="details-container">
-          <div>
+      <section className="infoBelow">
+        <FirstCol>
             <div className="activity-classification">{props.experience.activity}</div>
             <div className="activity-title">{props.experience.title}</div>
-  <div>{props.experience.city}, {props.experience.country}</div>
-  <div>{props.experience.averageRating} Stars / {props.experience.numberOfReviews} Reviews </div>
-  <div>{props.experience.tags}</div>
-          </div>
-          <div>
-            <div className="blank-black-div-matches-with-Art-Walk-div"></div>
+            <div>{props.experience.city}, {props.experience.country}</div>
+            <div>{props.experience.averageRating} Stars / {props.experience.numberOfReviews} Reviews </div>
+            <div>{props.experience.tags}</div>
+        </FirstCol>
+        <SecondCol>
+        <div className="blank-black-div-matches-with-Art-Walk-div"></div>
             <div className="details-display">
               <div className="duration individual-detail">
                 <div className="duration-icon">
@@ -62,10 +69,17 @@ function InfoBelowMediaDisplay (props) {
                   </div>
                 </div>
               </div>
+        </SecondCol>
+        <div className="details-container">
+          <div>
+
+          </div>
+          <div>
+
             </div>
           </div>
-        </Wrapper>
       </section>
+      </Wrapper>
     </div>
 
   )
