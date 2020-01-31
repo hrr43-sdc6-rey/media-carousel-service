@@ -1,13 +1,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  background-color: black;
 }
-
-/* .main-container {
-  padding-left: 50px;
-  padding-right: 50px;
-  margin: auto;
-} */
 
 .image-wrapper {
   width: 100vw;

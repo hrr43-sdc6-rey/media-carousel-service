@@ -2,57 +2,46 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-padding: 4em;
+margin-top: 20px;
 background: black;
 display: flex;
 `;
 
-const experienceHardCodedData = {
-  city: 'Mexico City',
-  state: null,
-  country: 'Mexico',
-  category: 'Arts and Culture',
-  activity: 'History'
-}
+const listWrapper = styled.ul`
+padding-line-start: 0px;
+`;
 
-function InfoAboveMediaDisplay () {
-  const [experienceId, setExperienceId] = useState(experienceHardCodedData);
-
-  // useEffect to perform API call to get data
-  // useEffect(() => {
-
-  // });
+function InfoAboveMediaDisplay (props) {
 
   return (
     <div>
       <Wrapper>
-        <ul className="listCityAndActivity">
+          <listWrapper>
           <li className="listItem">
-            <a>
-              <span className="city-country">Mexico City, Mexico</span>
-            </a>
-          </li>
-          <li className="listItem">
-            <span className="slash"> / </span>
-          </li>
-          <li className="listItem">
-            <a>
-              <span className="category">Arts and Culture</span>
-            </a>
-          </li>
-          <li className="listItem">
-            <span className="slash"> / </span>
-          </li>
-          <li className="listItem">
-            <a>
-              <span className="activity">Art Walk</span>
-            </a>
-          </li>
-        </ul>
+              <a>
+                <span className="city-country">{props.experience.city}, {props.experience.country}</span>
+              </a>
+            </li>
+            <li className="listItem">
+              <span className="slash"> / </span>
+            </li>
+            <li className="listItem">
+              <a>
+                <span className="category">{props.experience.category}</span>
+              </a>
+            </li>
+            <li className="listItem">
+              <span className="slash"> / </span>
+            </li>
+            <li className="listItem">
+              <a>
+                <span className="activity">{props.experience.activity}</span>
+              </a>
+            </li>
+          </listWrapper>
       </Wrapper>
     </div>
   )
-
 }
 
 

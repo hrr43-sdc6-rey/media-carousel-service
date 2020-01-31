@@ -3,30 +3,35 @@ import styled from 'styled-components';
 
 
 class MediaDisplay extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
-      <div class="image-wrapper">
-        <section class="image-section">
-          <div class="image-cover">
-            <img src="https://picsum.photos/id/1018/312/416" alt="an image of something" />
+      <div className="image-wrapper">
+        <section className="image-section">
+          <div className="image-cover">
+            {/* <img src={this.props.images[0]} alt="an image of something" /> */}
+            <img src="https://picsum.photos/200/300" />
           </div>
-          <div class="image-cover">
-            <img src="https://picsum.photos/id/1047/312/416" alt="an image of something" />
+          <div className="image-cover">
+            {/* <img src={this.props.images[1]} alt="an image of something" /> */}
+            <img src="https://picsum.photos/200/300" />
           </div>
-          <div class="vertical-stack-images">
-            <div class="image-cover">
-              <img src="https://picsum.photos/id/1055/200/300" alt="an image of something" />
+          <div className="vertical-stack-images">
+            <div className="image-cover">
+              {/* <img src={this.props.images[2]} alt="an image of something" /> */}
+              <img src="https://picsum.photos/200/300" />
             </div>
-            <div class="image-cover">
-              <img src="https://picsum.photos/id/106/156/208" alt="an image of something" />
+            <div className="image-cover">
+              {/* <img src={this.props.images[3]} alt="an image of something" /> */}
+              <img src="https://picsum.photos/200/300" />
             </div>
           </div>
-          <div class="image-cover">
-            <img src="https://picsum.photos/id/1069/312/416" alt="an image of something" />
+          <div className="image-cover">
+            {/* <img src={this.props.images[4]} alt="an image of something" /> */}
+            <img src="https://picsum.photos/200/300" />
           </div>
         </section>
       </div>

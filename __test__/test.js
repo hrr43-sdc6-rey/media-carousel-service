@@ -19,6 +19,7 @@ describe('InfoBelowMediaDisplay should render correctly ', () => {
 
   it('InfoBelowMediaDisplay should shallow render', () => {
     const Wrapper = shallow(<InfoBelowMediaDisplay />)
+    // if passing props props={[]}
     expect(Wrapper).toMatchSnapshot()
   });
 })
