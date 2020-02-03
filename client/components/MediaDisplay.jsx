@@ -10,7 +10,6 @@ box-sizing: border-box;
 width: 100vw;
 background: black;
 display: flex;
-justify-content: flex-start;
 `;
 
 function MediaDisplay() {
@@ -26,16 +25,16 @@ function MediaDisplay() {
           <img src="https://picsum.photos/200/300" />
         </div>
         <div className="vertical-stack-images">
-          <div className="image-cover">
+          <div className="image-cover-stacked">
             {/* <img src={this.props.images[2]} alt="an image of something" /> */}
             <img src="https://picsum.photos/200/300" />
           </div>
-          <div className="image-cover">
+          <div className="image-cover-stacked">
             {/* <img src={this.props.images[3]} alt="an image of something" /> */}
             <img src="https://picsum.photos/200/300" />
           </div>
         </div>
-        <div className="image-cover">
+        <div className="image-cover-last">
           {/* <img src={this.props.images[4]} alt="an image of something" /> */}
           <img src="https://picsum.photos/200/300" />
         </div>

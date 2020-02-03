@@ -25,6 +25,11 @@ margin-right: auto;
 padding-left: 50px;
 padding-right: 50px
 background: black;
+display: flex;
+`;
+
+const TestDivBody = styled.section`
+height: 50px;
 `;
 
 class App extends React.Component {
@@ -33,10 +38,44 @@ class App extends React.Component {
     this.state = {
       images: [],
       experience: {},
+      navBar: null,
+      footerBar: null,
+      footerDarkMode: null,
+
     };
+
+    this.checkNavAndFooter = this.checkNavAndFooter.bind(this);
+    this.updateNavBarPosition = this.updateNavBarPosition.bind(this);
+    this.updateFooterBarPosition = this.updateFooterBarPosition.bind(this);
+  }
+
+  checkNavAndFooter() {
+    console.log('check states of nav and foot', this.state.navBar, this.state.footerBar);
+    const nav = this.state.navBar;
+    const footer = this.state.footerBar;
+    if (nav >= footer) {
+      console.log('true');
+      this.setState({ footerDarkMode: true });
+      console.log('footerDark', this.state.footerDarkMode);
+    } else {
+      console.log('false');
+      this.setState({ footerDarkMode: false });
+      console.log('footerLight', this.state.footerDarkMode);
+    }
+  }
+
+  updateNavBarPosition(navbarPosition) {
+    this.setState({ navBar: navbarPosition });
+  }
+
+  updateFooterBarPosition(footerPosition) {
+    this.setState({ footerBar: footerPosition });
+    console.log('update footerbar');
   }
 
   componentDidMount() {
+    window.addEventListener('scroll', this.checkNavAndFooter);
+
     const urlParams = window.location.href.split('/');
     const experienceId = parseInt(urlParams[urlParams.length - 1]);
 
@@ -69,17 +108,24 @@ class App extends React.Component {
             <MediaDisplay images={this.state.images} />
           </Wrapper>
           <Wrapper>
-            <InfoBelowMediaDisplay experience={this.state.experience} />
+            <InfoBelowMediaDisplay
+              experience={this.state.experience}
+              updateNavBarPosition={this.updateNavBarPosition}
+            />
           </Wrapper>
         </DivBlack>
+        <div />
+        <TestDivBody>
+          Body
+        </TestDivBody>
         <div>
-        Body
-        </div>
-        <div>
-          <FooterBar experience={this.state.experience} />
+          <FooterBar
+            experience={this.state.experience}
+            updateFooterBarPosition={this.updateFooterBarPosition}
+            footerDarkMode={this.state.footerDarkMode}
+          />
         </div>
       </div>
-
     );
   }
 }
