@@ -182,7 +182,7 @@ reviews
               </CostAndReviewsDiv>
               <ShowDatesDiv>
                 <ShowDates>
-            Show Dates
+            Show dates
                 </ShowDates>
               </ShowDatesDiv>
             </FooterDark>

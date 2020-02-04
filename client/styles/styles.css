@@ -41,12 +41,14 @@ body {
   display: flex;
   flex-flow: column nowrap;
   margin: 0 8px 0 0;
+  justify-content: space-between;
 }
 
 .vertical-stack-images .image-cover-stacked {
   width: 12.5vw;
   margin: 0;
   display: flex;
+  flex-grow: 1;
 }
 
 .image-cover-stacked img {
