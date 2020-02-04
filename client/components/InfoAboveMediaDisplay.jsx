@@ -1,49 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-margin-top: 20px;
-background: black;
+box-sizing: border-box;
+width: 100vw;
+background-color: black;
 display: flex;
 `;
 
-const listWrapper = styled.ul`
+const ListWrapper = styled.ul`
 padding-line-start: 0px;
+padding-left: 0px;
 `;
 
-function InfoAboveMediaDisplay (props) {
-
+function InfoAboveMediaDisplay(props) {
   return (
-    <div>
-      <Wrapper>
-          <listWrapper>
-          <li className="listItem">
-              <a>
-                <span className="city-country">{props.experience.city}, {props.experience.country}</span>
-              </a>
-            </li>
-            <li className="listItem">
-              <span className="slash"> / </span>
-            </li>
-            <li className="listItem">
-              <a>
-                <span className="category">{props.experience.category}</span>
-              </a>
-            </li>
-            <li className="listItem">
-              <span className="slash"> / </span>
-            </li>
-            <li className="listItem">
-              <a>
-                <span className="activity">{props.experience.activity}</span>
-              </a>
-            </li>
-          </listWrapper>
-      </Wrapper>
-    </div>
-  )
+    <Wrapper>
+      <ListWrapper>
+        <li className="listItem">
+          <span className="city-country">
+            {props.experience.city}
+,
+            {' '}
+            {props.experience.country}
+          </span>
+        </li>
+        <li className="listItem">
+          <span className="slash"> / </span>
+        </li>
+        <li className="listItem">
+          <span className="category">{props.experience.category}</span>
+        </li>
+        <li className="listItem">
+          <span className="slash"> / </span>
+        </li>
+        <li className="listItem">
+          <span className="activity">{props.experience.activity}</span>
+        </li>
+      </ListWrapper>
+    </Wrapper>
+  );
 }
 
 
 export default InfoAboveMediaDisplay;
-
