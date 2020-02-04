@@ -4,7 +4,7 @@ const experienceSchema = new mongoose.Schema({
   experienceId: {
     type: Number,
     required: true,
-    unique: true
+    unique: true,
   },
   title: String,
   city: String,
@@ -21,10 +21,10 @@ const experienceSchema = new mongoose.Schema({
   hostedLanguages: [],
   costPerPerson: {
     type: Number,
-    required: true
+    required: true,
   },
   imageUrls: [],
-  videoUrl: String
+  videoUrl: String,
 });
 
 const Experience = mongoose.model('Experience', experienceSchema);
