@@ -10,6 +10,8 @@ box-sizing: border-box;
 width: 100vw;
 background: black;
 display: flex;
+padding-top: 30px;
+padding-bottom: 40px;
 `;
 
 const FirstCol = styled.div`
@@ -19,9 +21,28 @@ const FirstCol = styled.div`
 `;
 
 const SecondCol = styled.div`
-  flex-basis: 65%;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  padding-left: 40px;
+  padding-right: 30px;
+`;
+
+const IndvDetail = styled.div`
+display: flex;
+flex-direction: column;
+flex-basis: 25%;
+padding-right: 35px;
+`;
+
+const StarsAndReviews = styled.span`
+padding-right: 8px;
+`;
+
+const DetailsGroup = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: flex-around;
+padding: 15px 0 0 15px;
 `;
 
 class InfoBelowMediaDisplay extends React.Component {
@@ -37,7 +58,6 @@ class InfoBelowMediaDisplay extends React.Component {
   listenScrollEvent(e) {
     const navBar = document.querySelector('.infoBelowBottom').getBoundingClientRect();
     this.setState({ navbarBottomPosition: navBar.bottom });
-    console.log('scroll navBarState', this.state.navbarBottomPosition, navBar);
     this.props.updateNavBarPosition(this.state.navbarBottomPosition);
   }
 
@@ -46,10 +66,12 @@ class InfoBelowMediaDisplay extends React.Component {
   }
 
   render() {
-    return(
-<Wrapper className="infoBelowBottom">
+    const { languages } = this.props;
+    const { includes } = this.props;
+
+    return (
+      <Wrapper className="infoBelowBottom">
         <section className="infoBelow">
-          {/* <div className="firstCol"> */}
           <FirstCol>
             <div className="activity-classification">{this.props.experience.activity}</div>
             <div className="activity-title">{this.props.experience.title}</div>
@@ -60,43 +82,41 @@ class InfoBelowMediaDisplay extends React.Component {
               {this.props.experience.country}
             </div>
             <div className="average-rating">
-              <span>{this.props.experience.averageRating}</span>
-              <span>{' '}</span>
-              <span>
+              <StarsAndReviews>
+                {this.props.experience.averageRating}
+              </StarsAndReviews>
+              <StarsAndReviews>
                 <FontAwesomeIcon icon={faStar} size="sm" />
-              </span>
-              {/* <span>&#9734;</span> */}
-              <span>{' '}</span>
-              <span>
-                (
-                {this.props.experience.numberOfReviews}
+              </StarsAndReviews>
+              (
+              {this.props.experience.numberOfReviews}
                 )
-              </span>
+              <StarsAndReviews />
             </div>
             <div>{this.props.experience.tags}</div>
           </FirstCol>
           <SecondCol>
-            <div className="blank-black-div-matches-with-Art-Walk-div" />
-            <div className="details-display">
-              <div className="duration individual-detail">
+            {/* <div className="blank-black-div-matches-with-Art-Walk-div" /> */}
+            <DetailsGroup>
+              <IndvDetail>
                 <div className="duration-icon">
                   <FontAwesomeIcon icon={faClock} size="xs" />
                 </div>
                 <div className="duration-title-time">
-                  <div className="duration-title">Duration</div>
+                  <div className="duration-title" style={{ color: '#DCDCDC' }}>Duration</div>
                   <div className="hours">
                     {this.props.experience.duration}
                     {' '}
 hours
                   </div>
                 </div>
-              </div>
-              <div className="group-size individual-detail">
+              </IndvDetail>
+              <IndvDetail>
                 <div className="group-size-icon">
                   <FontAwesomeIcon icon={faUserFriends} size="sm" />
                 </div>
                 <div className="group-size-title-time">
-                  <div className="group-size-title">Group size</div>
+                  <div className="group-size-title" style={{ color: '#DCDCDC' }}>Group size</div>
                   <div className="group-size">
 Up to
                     {' '}
@@ -105,130 +125,46 @@ Up to
 people
                   </div>
                 </div>
-              </div>
-              <div className="includes-or-cuisine individual-detail">
+              </IndvDetail>
+              <IndvDetail>
                 <div className="includes-icon">
                   <FontAwesomeIcon icon={faReceipt} size="sm" />
                 </div>
                 <div className="includes-title-items">
-                  <div className="includes-title">Includes</div>
-                  <div className="includes-items">{this.props.experience.includes}</div>
+                  <div className="includes-title" style={{ color: '#DCDCDC' }}>Includes</div>
+                  <div className="includes-items">
+                    {includes.map((include) => (
+                      <div key={include}>
+                        {include}
+,
+                      </div>
+                    ))}
+
+                  </div>
                 </div>
-              </div>
-              <div className="hosted-in-language individual-detail">
+              </IndvDetail>
+              <IndvDetail>
                 <div className="hosted-in-icon">
                   <FontAwesomeIcon icon={faComments} size="sm" />
                 </div>
                 <div className="hosted-in-title">
-                  <div className="duration-title">Hosted in</div>
-                  <div className="languages">{this.props.experience.hostedLanguages}</div>
+                  <div className="duration-title" style={{ color: '#DCDCDC' }}>Hosted in</div>
+                  <div className="languages">
+                    {languages.map((language) => (
+                      <div key={language}>
+                        {language}
+,
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </IndvDetail>
+            </DetailsGroup>
           </SecondCol>
-
-          {/* </div> */}
-          {/* <div className="secondCol"> */}
-
-          {/* </div> */}
         </section>
       </Wrapper>
     );
   }
 }
-
-// function InfoBelowMediaDisplay(props) {
-//   return (
-//     <div>
-//       <Wrapper>
-//         <section className="infoBelow">
-//           {/* <div className="firstCol"> */}
-//           <FirstCol>
-//             <div className="activity-classification">{props.experience.activity}</div>
-//             <div className="activity-title">{props.experience.title}</div>
-//             <div className="activity-city-state">
-//               {props.experience.city}
-// ,
-//               {' '}
-//               {props.experience.country}
-//             </div>
-//             <div className="average-rating">
-//               <span>{props.experience.averageRating}</span>
-//               <span>{' '}</span>
-//               <span>
-//                 <FontAwesomeIcon icon={faStar} size="sm" />
-//               </span>
-//               {/* <span>&#9734;</span> */}
-//               <span>{' '}</span>
-//               <span>
-//                 (
-//                 {props.experience.numberOfReviews}
-//                 )
-//               </span>
-//             </div>
-//             <div>{props.experience.tags}</div>
-//           </FirstCol>
-//           <SecondCol>
-//             <div className="blank-black-div-matches-with-Art-Walk-div" />
-//             <div className="details-display">
-//               <div className="duration individual-detail">
-//                 <div className="duration-icon">
-//                   <FontAwesomeIcon icon={faClock} size="xs" />
-//                 </div>
-//                 <div className="duration-title-time">
-//                   <div className="duration-title">Duration</div>
-//                   <div className="hours">
-//                     {props.experience.duration}
-//                     {' '}
-// hours
-//                   </div>
-//                 </div>
-//               </div>
-//               <div className="group-size individual-detail">
-//                 <div className="group-size-icon">
-//                   <FontAwesomeIcon icon={faUserFriends} size="sm" />
-//                 </div>
-//                 <div className="group-size-title-time">
-//                   <div className="group-size-title">Group size</div>
-//                   <div className="group-size">
-// Up to
-//                     {' '}
-//                     {props.experience.groupSize}
-//                     {' '}
-// people
-//                   </div>
-//                 </div>
-//               </div>
-//               <div className="includes-or-cuisine individual-detail">
-//                 <div className="includes-icon">
-//                   <FontAwesomeIcon icon={faReceipt} size="sm" />
-//                 </div>
-//                 <div className="includes-title-items">
-//                   <div className="includes-title">Includes</div>
-//                   <div className="includes-items">{props.experience.includes}</div>
-//                 </div>
-//               </div>
-//               <div className="hosted-in-language individual-detail">
-//                 <div className="hosted-in-icon">
-//                   <FontAwesomeIcon icon={faComments} size="sm" />
-//                 </div>
-//                 <div className="hosted-in-title">
-//                   <div className="duration-title">Hosted in</div>
-//                   <div className="languages">{props.experience.hostedLanguages}</div>
-//                 </div>
-//               </div>
-//             </div>
-//           </SecondCol>
-
-//           {/* </div> */}
-//           {/* <div className="secondCol"> */}
-
-//           {/* </div> */}
-//         </section>
-//       </Wrapper>
-//     </div>
-
-//   );
-// }
 
 export default InfoBelowMediaDisplay;

@@ -41,13 +41,13 @@ function MediaDisplay() {
         <div className="share-save">
           <div className="share">
             <button type="button" className="save-btn">
-              <FontAwesomeIcon className="save-icon" icon={faShareSquare} size="md" />
+              <FontAwesomeIcon className="save-icon" icon={faShareSquare} size="1x" />
               <span className="share-text">Share</span>
             </button>
           </div>
           <div className="save">
             <button type="button" className="share-btn">
-              <FontAwesomeIcon className="share-icon" icon={faHeart} size="md" />
+              <FontAwesomeIcon className="share-icon" icon={faHeart} size="1x" />
               <span className="save-text">Save</span>
             </button>
           </div>

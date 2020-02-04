@@ -15,32 +15,30 @@ padding-left: 0px;
 
 function InfoAboveMediaDisplay(props) {
   return (
-    <div>
-      <Wrapper>
-        <ListWrapper>
-          <li className="listItem">
-            <span className="city-country">
-              {props.experience.city}
+    <Wrapper>
+      <ListWrapper>
+        <li className="listItem">
+          <span className="city-country">
+            {props.experience.city}
 ,
-              {' '}
-              {props.experience.country}
-            </span>
-          </li>
-          <li className="listItem">
-            <span className="slash"> / </span>
-          </li>
-          <li className="listItem">
-            <span className="category">{props.experience.category}</span>
-          </li>
-          <li className="listItem">
-            <span className="slash"> / </span>
-          </li>
-          <li className="listItem">
-            <span className="activity">{props.experience.activity}</span>
-          </li>
-        </ListWrapper>
-      </Wrapper>
-    </div>
+            {' '}
+            {props.experience.country}
+          </span>
+        </li>
+        <li className="listItem">
+          <span className="slash"> / </span>
+        </li>
+        <li className="listItem">
+          <span className="category">{props.experience.category}</span>
+        </li>
+        <li className="listItem">
+          <span className="slash"> / </span>
+        </li>
+        <li className="listItem">
+          <span className="activity">{props.experience.activity}</span>
+        </li>
+      </ListWrapper>
+    </Wrapper>
   );
 }
 

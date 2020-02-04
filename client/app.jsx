@@ -41,6 +41,8 @@ class App extends React.Component {
       navBar: null,
       footerBar: null,
       footerDarkMode: null,
+      languages: [],
+      includes: [],
 
     };
 
@@ -50,15 +52,13 @@ class App extends React.Component {
   }
 
   checkNavAndFooter() {
-    console.log('check states of nav and foot', this.state.navBar, this.state.footerBar);
+    // console.log('check states of nav and foot', this.state.navBar, this.state.footerBar);
     const nav = this.state.navBar;
     const footer = this.state.footerBar;
     if (nav >= footer) {
-      console.log('true');
       this.setState({ footerDarkMode: true });
       console.log('footerDark', this.state.footerDarkMode);
     } else {
-      console.log('false');
       this.setState({ footerDarkMode: false });
       console.log('footerLight', this.state.footerDarkMode);
     }
@@ -66,11 +66,13 @@ class App extends React.Component {
 
   updateNavBarPosition(navbarPosition) {
     this.setState({ navBar: navbarPosition });
+    this.checkNavAndFooter();
   }
 
   updateFooterBarPosition(footerPosition) {
     this.setState({ footerBar: footerPosition });
-    console.log('update footerbar');
+    this.checkNavAndFooter();
+    // console.log('update footerbar');
   }
 
   componentDidMount() {
@@ -86,6 +88,8 @@ class App extends React.Component {
         this.setState({
           images: experienceObj.imageUrls,
           experience: experienceObj,
+          languages: experienceObj.hostedLanguages,
+          includes: experienceObj.includes,
         });
       })
       .catch((err) => {
@@ -110,6 +114,8 @@ class App extends React.Component {
           <Wrapper>
             <InfoBelowMediaDisplay
               experience={this.state.experience}
+              languages={this.state.languages}
+              includes={this.state.includes}
               updateNavBarPosition={this.updateNavBarPosition}
             />
           </Wrapper>

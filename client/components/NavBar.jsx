@@ -11,6 +11,7 @@ position: sticky;
 top: 0;
 display: flex;
 justify-content: space-between;
+padding: 20px 20px 10px 0;
 `;
 
 
@@ -18,26 +19,31 @@ const LogoAndSearch = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
+align-items: center;
 `;
 
 const SearchIcon = styled.div`
-padding-right: 20px
+padding-right: 20px;
 `;
 
 const SearchBar = styled.div`
 border-radius: 4px;
 background: white;
 width: 35vw;
+padding: 10px 10px 10px 10px;
 `;
 
-// const Input = styled.div`
-// background: white;
-// `;
+const SearchInput = styled.input`
+padding-left: 8px;
+font-size: 14px;
+border: white;
+`;
 
 const Sections = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: flex-end;
+align-items: center;
 color: white;
 width: 45vw;
 flex-wrap: nowrap;
@@ -59,22 +65,15 @@ function NavBar() {
         </SearchIcon>
         <SearchBar>
           <FontAwesomeIcon icon={faSearch} size="1x" style={{ color: 'grey' }} />
-          <input type="text" placeholder="Search" style={{ border: 'white' }} />
+          <SearchInput type="text" placeholder="Search" />
         </SearchBar>
       </LogoAndSearch>
       <Sections>
-        {/* <Topics> */}
         <Topics>English</Topics>
         <Topics>$ USD</Topics>
         <Topics>Become a Host</Topics>
         <Topics>Sign up</Topics>
         <Topics>Log in</Topics>
-        {/* <div>English</div>
-        <div>$ USD</div>
-        <div>Become a Host</div>
-        <div>Sign up</div>
-        <div>Log in</div> */}
-        {/* </Topics> */}
       </Sections>
     </Wrapper>
   );

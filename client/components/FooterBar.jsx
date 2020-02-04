@@ -6,30 +6,17 @@ import {
   faStar,
 } from '@fortawesome/free-solid-svg-icons';
 
-// const Wrapper = styled.section`
-// box-sizing: border-box;
-// width: 100vw;
-// margin-left: auto;
-// margin-right: auto;
-// padding-left: 50px;
-// padding-right: 50px;
-// display: flex;
-// background-color: red;
-// position: fixed;
-// bottom: 0;
-// `;
-
 const WrapperDark = styled.section`
 box-sizing: border-box;
 width: 100vw;
 margin-left: auto;
 margin-right: auto;
-padding-left: 50px;
-padding-right: 50px;
+padding: 10px 50px 10px 50px;
 display: flex;
 background-color: black;
 position: fixed;
 bottom: 0;
+border-top: solid .25px #DCDCDC;
 `;
 
 const WrapperLight = styled.section`
@@ -37,17 +24,18 @@ box-sizing: border-box;
 width: 100vw;
 margin-left: auto;
 margin-right: auto;
-padding-left: 50px;
-padding-right: 50px;
+padding: 10px 50px 10px 50px;
 display: flex;
 background-color: white;
 position: fixed;
 bottom: 0;
+border-top: solid .25px #DCDCDC;
 `;
 
 const FooterDark = styled.div`
 display: flex;
 flex-direction: row;
+align-items: center;
 position: relative;
 bottom: 0;
 width 100vw;
@@ -59,6 +47,7 @@ color: white;
 const FooterLight = styled.div`
 display: flex;
 flex-direction: row;
+align-items: center;
 position: relative;
 bottom: 0;
 width 100vw;
@@ -67,30 +56,32 @@ background: white;
 color: black;
 `;
 
-const CostAndReviewsDiv = styled.div`
-`;
-
 const CostAndReviews = styled.div`
 display: flex;
 flex-direction: column;
 align-self: flex-start;
-// position: absolute;
-// top: 0;
-// left: 0;
 `;
 
 const Reviews = styled.div`
 display: flex;
 flex-direction: row;
+padding-top: 3px;
 `;
 
-const ShowDatesDiv = styled.div`
+const IndReview = styled.div`
+padding-right: 5px;
 `;
 
 const ShowDates = styled.button`
 border-radius: 4px;
-font-size: 16px;
+font-size: 12px;
+background: #FF5A5F;
+color: white;
+padding: 10px 20px 10px 20px;
 `;
+
+const ShowDatesDiv = styled.div``;
+const CostAndReviewsDiv = styled.div``;
 
 class FooterBar extends React.Component {
   constructor(props) {
@@ -179,13 +170,13 @@ From $
 /person
                   </div>
                   <Reviews>
-                    <div className="ft-bar-reviews">{this.props.experience.averageRating}</div>
-                    {stars}
-                    <div className="ft-bar-reviews">
+                    <IndReview style={{ color: 'white' }}>{this.props.experience.averageRating}</IndReview>
+                    <IndReview style={{ color: 'white' }}>{stars}</IndReview>
+                    <IndReview style={{ color: 'white' }}>
                       {this.props.experience.numberOfReviews}
                       {' '}
 reviews
-                    </div>
+                    </IndReview>
                   </Reviews>
                 </CostAndReviews>
               </CostAndReviewsDiv>
@@ -207,19 +198,19 @@ From $
 /person
                   </div>
                   <Reviews>
-                    <div className="ft-bar-reviews">{this.props.experience.averageRating}</div>
-                    {stars}
-                    <div className="ft-bar-reviews">
+                    <IndReview style={{ color: '#008489' }}>{this.props.experience.averageRating}</IndReview>
+                    <IndReview style={{ color: '#008489' }}>{stars}</IndReview>
+                    <IndReview style={{ color: '#808080' }}>
                       {this.props.experience.numberOfReviews}
                       {' '}
 reviews
-                    </div>
+                    </IndReview>
                   </Reviews>
                 </CostAndReviews>
               </CostAndReviewsDiv>
               <ShowDatesDiv>
                 <ShowDates>
-            Show Dates
+            Show dates
                 </ShowDates>
               </ShowDatesDiv>
             </FooterLight>
@@ -229,89 +220,5 @@ reviews
     );
   }
 }
-
-// function FooterBar(props) {
-//   const numStars = props.experience.averageRating;
-//   let stars;
-
-//   if (numStars === 5) {
-//     stars = (
-//       <div>
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//       </div>
-//     );
-//   } else if (numStars === 4) {
-//     stars = (
-//       <div>
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//       </div>
-//     );
-//   } else if (numStars === 3) {
-//     stars = (
-//       <div>
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//       </div>
-//     );
-//   } else if (numStars === 2) {
-//     stars = (
-//       <div>
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//       </div>
-//     );
-//   } else if (numStars === 1) {
-//     stars = (
-//       <div>
-//         <FontAwesomeIcon icon={faStar} size="sm" />
-//       </div>
-//     );
-//   } else {
-//     stars = (
-//       <div> </div>
-//     );
-//   }
-
-
-//   return (
-//     <Wrapper>
-//       <Footer>
-//         <CostAndReviewsDiv>
-//           <CostAndReviews>
-//             <div className="ft-bar-cost">
-// From $
-//               {props.experience.costPerPerson}
-// /person
-//             </div>
-//             <Reviews>
-//               <div className="ft-bar-reviews">{props.experience.averageRating}</div>
-//               {stars}
-//               <div className="ft-bar-reviews">
-//                 {props.experience.numberOfReviews}
-//                 {' '}
-// reviews
-//               </div>
-//             </Reviews>
-//           </CostAndReviews>
-//         </CostAndReviewsDiv>
-//         <ShowDatesDiv>
-//           <ShowDates>
-//             Show Dates
-//           </ShowDates>
-//         </ShowDatesDiv>
-//       </Footer>
-//     </Wrapper>
-//   );
-// }
-
-// ReactDOM.render(<FooterBar experience={props.experience} />, document.getElementById('footer'));
 
 export default FooterBar;

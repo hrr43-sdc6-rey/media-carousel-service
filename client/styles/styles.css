@@ -104,13 +104,8 @@ body {
   flex-wrap: wrap;
 }
 
-.details-display {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .individual-detail {
-  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .activity-classification {
