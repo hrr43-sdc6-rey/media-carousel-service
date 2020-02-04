@@ -23,8 +23,7 @@ const FirstCol = styled.div`
 const SecondCol = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-left: 40px;
-  padding-right: 30px;
+  flex-basis: 65%;
 `;
 
 const IndvDetail = styled.div`
@@ -42,7 +41,7 @@ const DetailsGroup = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: flex-around;
-padding: 15px 0 0 15px;
+padding: 15px 0 0 0;
 `;
 
 class InfoBelowMediaDisplay extends React.Component {

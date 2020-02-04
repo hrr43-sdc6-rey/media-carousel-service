@@ -138,6 +138,7 @@ body {
 .infoBelow {
   display: flex;
   flex-wrap: wrap;
+  width: 90vw;
   color: white;
 }
 
