@@ -6,7 +6,7 @@
 
 ## Getting Started for Adding This Service to Your Proxy Server
 - Git clone the repo
-- In your proxy server's index.html page, add `<div id="photos-and-info"></div>` and `<script src="http://localhost:3000/bundle.js"></script>`
+- In your proxy server's index.html page, add `<div id="photos-and-info"></div>` and `<script src="http://localhost:3001/bundle.js"></script>`
 - cd into Media-Carousel-Service
 - Run `npm install`
 - Run `npm run start:dev`
