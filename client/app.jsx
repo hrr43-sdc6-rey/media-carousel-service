@@ -58,7 +58,7 @@ class App extends React.Component {
     const urlParams = window.location.href.split('/');
     const experienceId = parseInt(urlParams[urlParams.length - 1], 10) || 1;
 
-    axios.get(`/api/experiences/${experienceId}`)
+    axios.get(`http://localhost:3001/api/experiences/${experienceId}`)
       .then((res) => {
         const experienceObj = res.data[0];
 

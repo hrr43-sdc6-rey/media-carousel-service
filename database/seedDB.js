@@ -1,5 +1,6 @@
 const faker = require('faker');
 const Experiences = require('./experience.js');
+const db = require('./index.js');
 
 const seed = () => {
   const experiencesData = [];
