@@ -25,6 +25,3 @@ module.exports = {
     ],
   },
 };
-
-
-// @dev for styled-components do we add the sytled-components plugin into webpack config and install styled components https://styled-components.com/docs/tooling#babel-plugin
