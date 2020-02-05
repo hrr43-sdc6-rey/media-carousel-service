@@ -28,9 +28,9 @@ background: black;
 display: flex;
 `;
 
-const TestDivBody = styled.section`
-height: 25vh;
-`;
+// const TestDivBody = styled.section`
+// height: 25vh;
+// `;
 
 class App extends React.Component {
   constructor(props) {
@@ -118,7 +118,6 @@ class App extends React.Component {
           </Wrapper>
         </DivBlack>
         <div />
-        <TestDivBody />
         <div>
           <FooterBar
             experience={this.state.experience}
