@@ -56,7 +56,7 @@ class App extends React.Component {
     window.addEventListener('scroll', this.checkNavAndFooter);
 
     const urlParams = window.location.href.split('/');
-    const experienceId = parseInt(urlParams[urlParams.length - 1]);
+    const experienceId = parseInt(urlParams[urlParams.length - 1], 10) || 1;
 
     axios.get(`/api/experiences/${experienceId}`)
       .then((res) => {
@@ -81,7 +81,7 @@ class App extends React.Component {
   }
 
   isDarkMode(navBarPosition, footerBarPosition) {
-    return navBarPosition >= footerBarPosition;
+    return this.state.navBarPosition >= this.state.footerBarPosition;
   }
 
   updateNavBarPosition(navbarPosition) {
