@@ -1,4 +1,4 @@
-# Media and Experience Info Service
+# Media-Carousel-Service
 
 ## Getting Started
 - Run `npm install`
@@ -7,6 +7,3 @@
 ## Database
 - Install Mongoose and MongoDB if you don't have it already.
 - Seed the database by running `npm run seed`
-
-
-

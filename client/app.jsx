@@ -29,7 +29,7 @@ display: flex;
 `;
 
 const TestDivBody = styled.section`
-height: 50px;
+height: 25vh;
 `;
 
 class App extends React.Component {
@@ -38,8 +38,8 @@ class App extends React.Component {
     this.state = {
       images: [],
       experience: {},
-      navBar: null,
-      footerBar: null,
+      navBarPosition: null,
+      footerBarPosition: null,
       footerDarkMode: null,
       languages: [],
       includes: [],
@@ -49,30 +49,7 @@ class App extends React.Component {
     this.checkNavAndFooter = this.checkNavAndFooter.bind(this);
     this.updateNavBarPosition = this.updateNavBarPosition.bind(this);
     this.updateFooterBarPosition = this.updateFooterBarPosition.bind(this);
-  }
-
-  checkNavAndFooter() {
-    // console.log('check states of nav and foot', this.state.navBar, this.state.footerBar);
-    const nav = this.state.navBar;
-    const footer = this.state.footerBar;
-    if (nav >= footer) {
-      this.setState({ footerDarkMode: true });
-      console.log('footerDark', this.state.footerDarkMode);
-    } else {
-      this.setState({ footerDarkMode: false });
-      console.log('footerLight', this.state.footerDarkMode);
-    }
-  }
-
-  updateNavBarPosition(navbarPosition) {
-    this.setState({ navBar: navbarPosition });
-    this.checkNavAndFooter();
-  }
-
-  updateFooterBarPosition(footerPosition) {
-    this.setState({ footerBar: footerPosition });
-    this.checkNavAndFooter();
-    // console.log('update footerbar');
+    this.isDarkMode = this.isDarkMode.bind(this);
   }
 
   componentDidMount() {
@@ -95,6 +72,26 @@ class App extends React.Component {
       .catch((err) => {
         console.error('Error with axios get', err);
       });
+  }
+
+  checkNavAndFooter() {
+    const { navBarPosition, footerBarPosition } = this.state;
+
+    this.setState({ footerDarkMode: this.isDarkMode(navBarPosition, footerBarPosition) });
+  }
+
+  isDarkMode(navBarPosition, footerBarPosition) {
+    return navBarPosition >= footerBarPosition;
+  }
+
+  updateNavBarPosition(navbarPosition) {
+    this.setState({ navBarPosition: navbarPosition });
+    this.checkNavAndFooter();
+  }
+
+  updateFooterBarPosition(footerPosition) {
+    this.setState({ footerBarPosition: footerPosition });
+    this.checkNavAndFooter();
   }
 
 
@@ -121,9 +118,7 @@ class App extends React.Component {
           </Wrapper>
         </DivBlack>
         <div />
-        <TestDivBody>
-          Body
-        </TestDivBody>
+        <TestDivBody />
         <div>
           <FooterBar
             experience={this.state.experience}
