@@ -3,7 +3,7 @@ const ejs = require('ejs');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 
@@ -11,7 +11,7 @@ app.use(express.static('./public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'http://localhost:4000',
   optionsSuccessStatus: 200,
 }));
 app.engine('html', require('ejs').renderFile);
