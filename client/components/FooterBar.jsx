@@ -95,10 +95,8 @@ class FooterBar extends React.Component {
 
   listenScrollEvent(e) {
     const footer = document.querySelector('.footerTop').getBoundingClientRect();
-    console.log('footer', footer, footer.top);
     this.setState({ footerBarPosition: footer.top });
     this.props.updateFooterBarPosition(this.state.footerBarPosition);
-    console.log('listenScroll Footer', this.state.footerBarPosition);
   }
 
   componentDidMount() {
