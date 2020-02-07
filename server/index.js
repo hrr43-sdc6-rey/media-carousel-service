@@ -12,7 +12,7 @@ app.use(express.static('./public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors({
-  origin: 'http://localhost:4000',
+  origin: 'http://18.217.113.225:4000',
   optionsSuccessStatus: 200,
 }));
 app.use(express.static(path.join(__dirname, 'client/build')));
