@@ -77,7 +77,7 @@ class App extends React.Component {
   }
 
   isDarkMode(navBarPosition, footerBarPosition) {
-    return this.stanavBarPosition >= this.footerBarPosition;
+    return this.state.navBarPosition >= this.state.footerBarPosition;
   }
 
   updateNavBarPosition(navbarPosition) {
