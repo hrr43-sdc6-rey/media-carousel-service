@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -54,14 +55,16 @@ class InfoBelowMediaDisplay extends React.Component {
     this.listenScrollEvent = this.listenScrollEvent.bind(this);
   }
 
-  listenScrollEvent(e) {
-    const navBar = document.querySelector('.infoBelowBottom').getBoundingClientRect();
-    this.setState({ navbarBottomPosition: navBar.bottom });
-    this.props.updateNavBarPosition(this.state.navbarBottomPosition);
-  }
-
   componentDidMount() {
     window.addEventListener('scroll', this.listenScrollEvent);
+  }
+
+  listenScrollEvent() {
+    const navBar = document.querySelector('.infoBelowBottom').getBoundingClientRect();
+    this.setState({ navbarBottomPosition: navBar.bottom });
+    const { updateNavBarPosition } = this.props;
+    const { navbarBottomPosition } = this.state;
+    updateNavBarPosition(navbarBottomPosition);
   }
 
   render() {
@@ -95,7 +98,6 @@ class InfoBelowMediaDisplay extends React.Component {
             <div>{this.props.experience.tags}</div>
           </FirstCol>
           <SecondCol>
-            {/* <div className="blank-black-div-matches-with-Art-Walk-div" /> */}
             <DetailsGroup>
               <IndvDetail>
                 <div className="duration-icon">
@@ -165,5 +167,6 @@ people
     );
   }
 }
+
 
 export default InfoBelowMediaDisplay;

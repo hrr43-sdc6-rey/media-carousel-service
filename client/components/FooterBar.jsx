@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -93,14 +92,14 @@ class FooterBar extends React.Component {
     this.listenScrollEvent = this.listenScrollEvent.bind(this);
   }
 
-  listenScrollEvent(e) {
+  componentDidMount() {
+    window.addEventListener('scroll', this.listenScrollEvent);
+  }
+
+  listenScrollEvent() {
     const footer = document.querySelector('.footerTop').getBoundingClientRect();
     this.setState({ footerBarPosition: footer.top });
     this.props.updateFooterBarPosition(this.state.footerBarPosition);
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.listenScrollEvent);
   }
 
   render() {
