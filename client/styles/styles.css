@@ -61,10 +61,6 @@ body {
   margin-bottom: 8px;
 }
 
-/* .vertical-stack-images .image-cover-stacked:last-child {
-  margin: 0 8px 0 0;
-} */
-
 .share-save {
   display: flex;
   flex-direction: row;

@@ -1,6 +1,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -14,6 +15,8 @@ app.use(cors({
   origin: 'http://localhost:4000',
   optionsSuccessStatus: 200,
 }));
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.engine('html', require('ejs').renderFile);
 
 app.get('/:id', (req, res) => {

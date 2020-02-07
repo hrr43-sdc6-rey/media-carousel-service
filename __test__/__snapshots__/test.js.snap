@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`InfoAboveMediaDisplay should render correctly  InfoAboveMediaDisplay should shallow render 1`] = `ShallowWrapper {}`;
-
-exports[`InfoBelowMediaDisplay should render correctly  InfoBelowMediaDisplay should shallow render 1`] = `ShallowWrapper {}`;
-
-exports[`MediaDisplay should render correctly  MediaDisplay should shallow render 1`] = `ShallowWrapper {}`;

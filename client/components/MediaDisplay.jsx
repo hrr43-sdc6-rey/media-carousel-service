@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareSquare } from '@fortawesome/free-solid-svg-icons';
@@ -12,31 +13,26 @@ background: black;
 display: flex;
 `;
 
-function MediaDisplay(props) {
+function MediaDisplay({ images }) {
   return (
     <Wrapper>
       <section className="image-section">
         <div className="image-cover">
-          <img src={props.images[0]} alt="an image of something" />
-          {/* <img src="https://picsum.photos/id/1039/200/300" /> */}
+          <img src={images[0]} alt="image 1" />
         </div>
         <div className="image-cover">
-          <img src={props.images[1]} alt="an image of something" />
-          {/* <img src="https://picsum.photos/id/1011/200/300" /> */}
+          <img src={images[1]} alt="image 2" />
         </div>
         <div className="vertical-stack-images">
           <div className="image-cover-stacked">
-            <img src={props.images[2]} alt="an image of something" />
-            {/* <img src="https://picsum.photos/id/1015/200/300" /> */}
+            <img src={images[2]} alt="image 3" />
           </div>
           <div className="image-cover-stacked">
-            <img src={props.images[3]} alt="an image of something" />
-            {/* <img src="https://picsum.photos/id/1047/200/300" /> */}
+            <img src={images[3]} alt="image 4" />
           </div>
         </div>
         <div className="image-cover-last">
-          <img src={props.images[4]} alt="an image of something" />
-          {/* <img src="https://picsum.photos/id/1055/200/300" /> */}
+          <img src={images[4]} alt="image 5" />
         </div>
         <div className="share-save">
           <div className="share">
@@ -56,5 +52,9 @@ function MediaDisplay(props) {
     </Wrapper>
   );
 }
+
+MediaDisplay.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default MediaDisplay;

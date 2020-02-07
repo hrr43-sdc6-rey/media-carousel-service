@@ -28,10 +28,6 @@ background: black;
 display: flex;
 `;
 
-// const TestDivBody = styled.section`
-// height: 25vh;
-// `;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -96,6 +92,9 @@ class App extends React.Component {
 
 
   render() {
+    const {
+      images, experience, languages, includes, footerDarkMode,
+    } = this.state;
     return (
       <div>
         <DivBlack>
@@ -103,16 +102,16 @@ class App extends React.Component {
             <NavBar />
           </Wrapper>
           <Wrapper>
-            <InfoAboveMediaDisplay experience={this.state.experience} />
+            <InfoAboveMediaDisplay experience={experience} />
           </Wrapper>
           <Wrapper>
-            <MediaDisplay images={this.state.images} />
+            <MediaDisplay images={images} />
           </Wrapper>
           <Wrapper>
             <InfoBelowMediaDisplay
-              experience={this.state.experience}
-              languages={this.state.languages}
-              includes={this.state.includes}
+              experience={experience}
+              languages={languages}
+              includes={includes}
               updateNavBarPosition={this.updateNavBarPosition}
             />
           </Wrapper>
@@ -120,9 +119,9 @@ class App extends React.Component {
         <div />
         <div>
           <FooterBar
-            experience={this.state.experience}
+            experience={experience}
             updateFooterBarPosition={this.updateFooterBarPosition}
-            footerDarkMode={this.state.footerDarkMode}
+            footerDarkMode={footerDarkMode}
           />
         </div>
       </div>
