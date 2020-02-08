@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //   origin: 'http://18.217.113.225:4000',
 //   optionsSuccessStatus: 200,
 // }));
-const whitelist = ['http://18.222.165.232:4000', 'http://18.223.132.12:4000/', 'http://18.217.113.225:4000', 'http://localhost:4000', 'ec2-18-217-113-225.us-east-2.compute.amazonaws.com:3001', 'ec2-18-217-113-225.us-east-2.compute.amazonaws.com:4000'];
+const whitelist = ['http://18.222.165.232:4000', 'http://18.223.132.12:4000', 'http://18.217.113.225:4000', 'http://localhost:4000', 'ec2-18-217-113-225.us-east-2.compute.amazonaws.com:3001', 'ec2-18-217-113-225.us-east-2.compute.amazonaws.com:4000'];
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
