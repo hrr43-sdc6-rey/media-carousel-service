@@ -13,7 +13,6 @@ import InfoAboveMediaDisplay from './components/InfoAboveMediaDisplay.jsx';
 import InfoBelowMediaDisplay from './components/InfoBelowMediaDisplay.jsx';
 
 // require('dotenv').config();
-// process.env.NODE_ENV = 'development';
 
 library.add(fab);
 
