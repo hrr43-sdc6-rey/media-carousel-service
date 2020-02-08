@@ -12,6 +12,9 @@ import FooterBar from './components/FooterBar.jsx';
 import InfoAboveMediaDisplay from './components/InfoAboveMediaDisplay.jsx';
 import InfoBelowMediaDisplay from './components/InfoBelowMediaDisplay.jsx';
 
+// require('dotenv').config();
+// process.env.NODE_ENV = 'development';
+
 library.add(fab);
 
 const DivBlack = styled.div`
@@ -53,6 +56,8 @@ class App extends React.Component {
 
     const urlParams = window.location.href.split('/');
     const experienceId = parseInt(urlParams[urlParams.length - 1], 10) || 1;
+
+    // const experiencesUrl = process.env.NODE_ENV === 'development' ? `http://localhost:3001/api/experiences/${experienceId}` : `http://18.217.113.225:3001/api/experiences/${experienceId}`;
 
     axios.get(`http://18.217.113.225:3001/api/experiences/${experienceId}`)
       .then((res) => {
