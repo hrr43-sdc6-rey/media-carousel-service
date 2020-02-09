@@ -70,32 +70,36 @@ class InfoBelowMediaDisplay extends React.Component {
   render() {
     const { languages } = this.props;
     const { includes } = this.props;
+    const {
+      experience: {
+        activity, title, city, country, averageRating, numberOfReviews, duration, groupSize,
+      },
+    } = this.props;
 
     return (
       <Wrapper className="infoBelowBottom">
         <section className="infoBelow">
           <FirstCol>
-            <div className="activity-classification">{this.props.experience.activity}</div>
-            <div className="activity-title">{this.props.experience.title}</div>
+            <div className="activity-classification">{activity}</div>
+            <div className="activity-title">{title}</div>
             <div className="activity-city-state">
-              {this.props.experience.city}
+              {city}
 ,
               {' '}
-              {this.props.experience.country}
+              {country}
             </div>
             <div className="average-rating">
               <StarsAndReviews>
-                {this.props.experience.averageRating}
+                {averageRating}
               </StarsAndReviews>
               <StarsAndReviews>
                 <FontAwesomeIcon icon={faStar} size="sm" />
               </StarsAndReviews>
               (
-              {this.props.experience.numberOfReviews}
+              {numberOfReviews}
                 )
               <StarsAndReviews />
             </div>
-            <div>{this.props.experience.tags}</div>
           </FirstCol>
           <SecondCol>
             <DetailsGroup>
@@ -106,7 +110,7 @@ class InfoBelowMediaDisplay extends React.Component {
                 <div className="duration-title-time">
                   <div className="duration-title" style={{ color: '#DCDCDC' }}>Duration</div>
                   <div className="hours">
-                    {this.props.experience.duration}
+                    {duration}
                     {' '}
 hours
                   </div>
@@ -121,7 +125,7 @@ hours
                   <div className="group-size">
 Up to
                     {' '}
-                    {this.props.experience.groupSize}
+                    {groupSize}
                     {' '}
 people
                   </div>
@@ -168,5 +172,20 @@ people
   }
 }
 
+
+InfoBelowMediaDisplay.propTypes = {
+  experience: PropTypes.shape({
+    activity: PropTypes.string,
+    title: PropTypes.string,
+    city: PropTypes.string,
+    country: PropTypes.string,
+    averageRating: PropTypes.number,
+    numberOfReviews: PropTypes.number,
+    duration: PropTypes.number,
+    groupSize: PropTypes.number,
+  }),
+  languages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  includes: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default InfoBelowMediaDisplay;

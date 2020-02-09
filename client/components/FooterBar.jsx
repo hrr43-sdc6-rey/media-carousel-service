@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -99,16 +100,25 @@ class FooterBar extends React.Component {
   listenScrollEvent() {
     const footer = document.querySelector('.footerTop').getBoundingClientRect();
     this.setState({ footerBarPosition: footer.top });
-    this.props.updateFooterBarPosition(this.state.footerBarPosition);
+    const { updateFooterBarPosition } = this.props;
+    updateFooterBarPosition(this.state.footerBarPosition);
   }
 
   render() {
-    const isDarkMode = this.props.footerDarkMode;
+    const { footerDarkMode } = this.props;
+    const isDarkMode = footerDarkMode;
 
-    const numStars = this.props.experience.averageRating;
+    // const { averageRating } = this.props;
+    const {
+      experience: {
+        costPerPerson, averageRating, numberOfReviews,
+      },
+    } = this.props;
+
+    const numStars = averageRating;
     let stars;
 
-    if (numStars === 5) {
+    if (numStars >= 4.5) {
       stars = (
         <div>
           <FontAwesomeIcon icon={faStar} size="sm" />
@@ -118,7 +128,7 @@ class FooterBar extends React.Component {
           <FontAwesomeIcon icon={faStar} size="sm" />
         </div>
       );
-    } else if (numStars === 4) {
+    } else if (numStars >= 3.5 && numStars <= 4.49) {
       stars = (
         <div>
           <FontAwesomeIcon icon={faStar} size="sm" />
@@ -127,7 +137,7 @@ class FooterBar extends React.Component {
           <FontAwesomeIcon icon={faStar} size="sm" />
         </div>
       );
-    } else if (numStars === 3) {
+    } else if (numStars >= 2.5 && numStars <= 3.49) {
       stars = (
         <div>
           <FontAwesomeIcon icon={faStar} size="sm" />
@@ -135,14 +145,14 @@ class FooterBar extends React.Component {
           <FontAwesomeIcon icon={faStar} size="sm" />
         </div>
       );
-    } else if (numStars === 2) {
+    } else if (numStars >= 1.5 && numStars <= 2.49) {
       stars = (
         <div>
           <FontAwesomeIcon icon={faStar} size="sm" />
           <FontAwesomeIcon icon={faStar} size="sm" />
         </div>
       );
-    } else if (numStars === 1) {
+    } else if (numStars <= 1.49) {
       stars = (
         <div>
           <FontAwesomeIcon icon={faStar} size="sm" />
@@ -163,14 +173,14 @@ class FooterBar extends React.Component {
                 <CostAndReviews>
                   <div className="ft-bar-cost">
 From $
-                    {this.props.experience.costPerPerson}
+                    {costPerPerson}
 /person
                   </div>
                   <Reviews>
-                    <IndReview style={{ color: 'white' }}>{this.props.experience.averageRating}</IndReview>
+                    <IndReview style={{ color: 'white' }}>{averageRating}</IndReview>
                     <IndReview style={{ color: 'white' }}>{stars}</IndReview>
                     <IndReview style={{ color: 'white' }}>
-                      {this.props.experience.numberOfReviews}
+                      {numberOfReviews}
                       {' '}
 reviews
                     </IndReview>
@@ -191,14 +201,14 @@ reviews
                 <CostAndReviews>
                   <div className="ft-bar-cost">
 From $
-                    {this.props.experience.costPerPerson}
+                    {costPerPerson}
 /person
                   </div>
                   <Reviews>
-                    <IndReview style={{ color: '#008489' }}>{this.props.experience.averageRating}</IndReview>
+                    <IndReview style={{ color: '#008489' }}>{averageRating}</IndReview>
                     <IndReview style={{ color: '#008489' }}>{stars}</IndReview>
                     <IndReview style={{ color: '#808080' }}>
-                      {this.props.experience.numberOfReviews}
+                      {numberOfReviews}
                       {' '}
 reviews
                     </IndReview>
@@ -217,5 +227,13 @@ reviews
     );
   }
 }
+
+FooterBar.propTypes = {
+  experience: PropTypes.shape({
+    costPerPerson: PropTypes.number,
+    averageRating: PropTypes.number,
+    numberOfReviews: PropTypes.number,
+  }),
+};
 
 export default FooterBar;
