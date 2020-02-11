@@ -16,8 +16,10 @@ library.add(fab);
 
 const DivBlack = styled.div`
 background: black;
-margin: 0;
+box-sizing: border-box;
+display: block;
 `;
+
 
 const Wrapper = styled.section`
 margin-left: auto;
@@ -100,7 +102,8 @@ class App extends React.Component {
       images, experience, languages, includes, footerDarkMode,
     } = this.state;
     return (
-      <div>
+
+      <div className="container">
         <DivBlack>
           <Wrapper>
             <NavBar />

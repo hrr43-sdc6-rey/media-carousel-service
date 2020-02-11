@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
@@ -14,33 +15,48 @@ padding-left: 0px;
 `;
 
 function InfoAboveMediaDisplay(props) {
+  const {
+    experience: {
+      city, country, category, activity,
+    },
+  } = props;
+
   return (
     <Wrapper>
       <ListWrapper>
         <li className="listItem">
           <span className="city-country">
-            {props.experience.city}
+            {city}
 ,
             {' '}
-            {props.experience.country}
+            {country}
           </span>
         </li>
         <li className="listItem">
           <span className="slash"> / </span>
         </li>
         <li className="listItem">
-          <span className="category">{props.experience.category}</span>
+          <span className="category">{category}</span>
         </li>
         <li className="listItem">
           <span className="slash"> / </span>
         </li>
         <li className="listItem">
-          <span className="activity">{props.experience.activity}</span>
+          <span className="activity">{activity}</span>
         </li>
       </ListWrapper>
     </Wrapper>
   );
 }
+
+InfoAboveMediaDisplay.propTypes = {
+  experience: PropTypes.shape({
+    city: PropTypes.string,
+    country: PropTypes.string,
+    category: PropTypes.string,
+    activity: PropTypes.string,
+  }),
+};
 
 
 export default InfoAboveMediaDisplay;

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">63.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/18</span>
+                <span class='fraction'>14/22</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">63.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/18</span>
+                <span class='fraction'>14/22</span>
             </div>
         
             
@@ -226,7 +226,29 @@
 <a name='L167'></a><a href='#L167'>167</a>
 <a name='L168'></a><a href='#L168'>168</a>
 <a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -291,14 +313,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -380,6 +408,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -456,41 +500,47 @@ class InfoBelowMediaDisplay extends React.Component {
 <span class="cstat-no" title="statement not covered" >    window.addEventListener('scroll', this.listenScrollEvent);</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  li</span>stenScrollEvent(e) {
+<span class="fstat-no" title="function not covered" >  li</span>stenScrollEvent() {
     const navBar = <span class="cstat-no" title="statement not covered" >document.querySelector('.infoBelowBottom').getBoundingClientRect();</span>
 <span class="cstat-no" title="statement not covered" >    this.setState({ navbarBottomPosition: navBar.bottom });</span>
-<span class="cstat-no" title="statement not covered" >    this.props.updateNavBarPosition(this.state.navbarBottomPosition);</span>
+    const { updateNavBarPosition } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    const { navbarBottomPosition } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+<span class="cstat-no" title="statement not covered" >    updateNavBarPosition(navbarBottomPosition);</span>
   }
 &nbsp;
   render() {
     const { languages } = this.props;
     const { includes } = this.props;
+    const {
+      experience: {
+        activity, title, city, country, averageRating, numberOfReviews, duration, groupSize,
+      },
+    } = this.props;
 &nbsp;
     return (
       &lt;Wrapper className="infoBelowBottom"&gt;
         &lt;section className="infoBelow"&gt;
           &lt;FirstCol&gt;
-            &lt;div className="activity-classification"&gt;{this.props.experience.activity}&lt;/div&gt;
-            &lt;div className="activity-title"&gt;{this.props.experience.title}&lt;/div&gt;
+            &lt;div className="activity-classification"&gt;{activity}&lt;/div&gt;
+            &lt;div className="activity-title"&gt;{title}&lt;/div&gt;
             &lt;div className="activity-city-state"&gt;
-              {this.props.experience.city}
+              {city}
 ,
               {' '}
-              {this.props.experience.country}
+              {country}
             &lt;/div&gt;
             &lt;div className="average-rating"&gt;
               &lt;StarsAndReviews&gt;
-                {this.props.experience.averageRating}
+                {averageRating}
               &lt;/StarsAndReviews&gt;
               &lt;StarsAndReviews&gt;
                 &lt;FontAwesomeIcon icon={faStar} size="sm" /&gt;
               &lt;/StarsAndReviews&gt;
               (
-              {this.props.experience.numberOfReviews}
+              {numberOfReviews}
                 )
               &lt;StarsAndReviews /&gt;
             &lt;/div&gt;
-            &lt;div&gt;{this.props.experience.tags}&lt;/div&gt;
           &lt;/FirstCol&gt;
           &lt;SecondCol&gt;
             &lt;DetailsGroup&gt;
@@ -501,7 +551,7 @@ class InfoBelowMediaDisplay extends React.Component {
                 &lt;div className="duration-title-time"&gt;
                   &lt;div className="duration-title" style={{ color: '#DCDCDC' }}&gt;Duration&lt;/div&gt;
                   &lt;div className="hours"&gt;
-                    {this.props.experience.duration}
+                    {duration}
                     {' '}
 hours
                   &lt;/div&gt;
@@ -516,7 +566,7 @@ hours
                   &lt;div className="group-size"&gt;
 Up to
                     {' '}
-                    {this.props.experience.groupSize}
+                    {groupSize}
                     {' '}
 people
                   &lt;/div&gt;
@@ -563,6 +613,22 @@ people
   }
 }
 &nbsp;
+&nbsp;
+InfoBelowMediaDisplay.propTypes = {
+  experience: PropTypes.shape({
+    activity: PropTypes.string,
+    title: PropTypes.string,
+    city: PropTypes.string,
+    country: PropTypes.string,
+    averageRating: PropTypes.number,
+    numberOfReviews: PropTypes.number,
+    duration: PropTypes.number,
+    groupSize: PropTypes.number,
+  }),
+  languages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  includes: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+&nbsp;
 export default InfoBelowMediaDisplay;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -571,7 +637,7 @@ export default InfoBelowMediaDisplay;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Feb 05 2020 20:25:02 GMT-0500 (Eastern Standard Time)
+                at Sun Feb 09 2020 21:43:15 GMT-0500 (Eastern Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>

@@ -8,10 +8,10 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 const Wrapper = styled.section`
 box-sizing: border-box;
-width: 100vw;
 background: black;
 display: flex;
 `;
+// width: 100vw;
 
 function MediaDisplay({ images }) {
   return (

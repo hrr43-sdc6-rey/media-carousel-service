@@ -47,6 +47,7 @@ align-items: center;
 color: white;
 width: 45vw;
 flex-wrap: nowrap;
+padding: 10px;
 `;
 
 const Topics = styled.div`
