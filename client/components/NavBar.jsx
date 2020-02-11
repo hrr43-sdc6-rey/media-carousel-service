@@ -54,7 +54,7 @@ const Topics = styled.div`
 padding-left: 12px;
 display: flex;
 flex-wrap: nowrap;
-font-size: 12px;
+font-size: 14px;
 `;
 
 function NavBar() {
