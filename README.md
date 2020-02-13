@@ -17,11 +17,9 @@
 
 
 ## INFO FOR CRUD API ROUTES
-CREATE (POST)
-- /api/experiences/
-READ (GET)
-- /api/experiences/:id
-UPDATE(PUT)
-- /api/experiences/:id
-DELETE(DELETE)
-- /api/experiences/:id
+|       ENDPOINTS        |   TYPE   |         OPERATION          |
+|  --------------------  | -------  |  ------------------------  |
+|  /api/experiences/     |  POST    |  creates an experience     |
+|  /api/experiences/:id  |  GET     |  retrieves an experience   |
+|  /api/experiences/:id  |  PUT     |  updates an experience     |
+|  /api/experiences/:id  |  DELETE  |  deletes an experience     |
