@@ -7,3 +7,5 @@
 .env
 
 data_generator/*.csv
+
+data_generator/logs
