@@ -2,10 +2,13 @@ const faker = require('faker');
 const createCsvStringifier = require('csv-writer').createObjectCsvStringifier;
 const fs = require('fs');
 
+// for data generation, choices are 'postgres' or 'cassandra'
+const DBTYPE = 'cassandra';
 // csv filename
-const CSVFILE = 'test.csv';
+const CSVFILE = `${DBTYPE}-data.csv`;
 // the number of records to generate
-const RECORDNUMS = 1;
+const RECORDNUMS = 10000000;
+
 
 const writeData = fs.createWriteStream(CSVFILE);
 
@@ -40,7 +43,11 @@ function convertTitleCase(string) {
 const writeRecords = (numRecords, writer, encoding, callback) => {
   // const startTime = process.hrtime();
 
-  writeData.write(csvStringifier.getHeaderString(), 'utf8');
+  if(DBTYPE === 'cassandra') {
+    writeData.write(csvStringifier.getHeaderString().toLowerCase(), 'utf8');
+  }
+
+
 
   let id = 0;
   let i = numRecords;
@@ -88,7 +95,39 @@ const writeRecords = (numRecords, writer, encoding, callback) => {
         experience[0].imageUrls.push(url);
       }
 
+      // for postgres arrays
+      if(DBTYPE === 'postgres') {
+        var temp = experience[0].includes;
+        experience[0].includes = `{${temp}}`;
+        temp = experience[0].hostedLanguages;
+        experience[0].hostedLanguages = `{${temp}}`;
+        temp = experience[0].imageUrls;
+        experience[0].imageUrls = `{${temp}}`;
+      }
+
+      // for cassandra arrays using dsbulk loader
+      if(DBTYPE === 'cassandra') {
+        // var temp = experience[0].includes;
+        var temp = JSON.stringify(experience[0].includes);
+        // console.log(temp);
+        // experience[0].includes = `[${temp}]`;
+        experience[0].includes = temp;
+        temp = JSON.stringify(experience[0].hostedLanguages);
+        // temp = experience[0].hostedLanguages;
+        // console.log(temp);
+        // experience[0].hostedLanguages = `[${temp}]`;
+        experience[0].hostedLanguages = temp;
+        // temp = experience[0].imageUrls
+        temp = JSON.stringify(experience[0].imageUrls);
+        // console.log(temp);
+        // experience[0].imageUrls = `[${temp}]`;
+        experience[0].imageUrls = temp;
+      }
+
       experience = csvStringifier.stringifyRecords(experience);
+      if(DBTYPE === 'cassandra') {
+        experience = experience.replace(/""/g, '\\"');
+      }
 
       if (i === 0) {
         writer.write(experience, encoding, callback);
