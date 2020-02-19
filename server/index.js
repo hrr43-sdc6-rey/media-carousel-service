@@ -6,7 +6,10 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3001;
 const bodyParser = require('body-parser');
-const db = require('../database/index.js');
+// const db = require('../database/index.js');
+const {
+  getExperiences, addExperiences, updateExperiences, deleteExperiences
+} = require('../database/index.js');
 
 app.use(cors());
 app.use(express.static('./public'));
@@ -25,9 +28,9 @@ app.get('/:id', (req, res) => {
 app.post('/api/experiences/', (req, res) => {
   // console.log(req.body);
   // res.status(200).end(JSON.stringify(req.body));
-  db.addExperiences(req.body)
+  addExperiences(req.body)
     .then((data) => {
-      res.status(200).end(data);
+      res.status(200).end(data.rows);
     })
     .catch((err) => {
       res.status(400).send({
@@ -40,9 +43,9 @@ app.post('/api/experiences/', (req, res) => {
 app.get('/api/experiences/:id', (req, res) => {
   const experienceId = parseInt(req.params.id, 10);
 
-  db.getExperiences(experienceId)
+  getExperiences(experienceId)
     .then((data) => {
-      res.status(200).send(data);
+      res.status(200).send(data.rows);
     })
     .catch((err) => {
       res.status(400).send({
@@ -56,9 +59,9 @@ app.put('/api/experiences/:id', (req, res) => {
   const experienceId = parseInt(req.params.id, 10);
   // console.log(req.body);
   // res.status(200).end(JSON.stringify(req.body));
-  db.updateExperiences(experienceId, req.body)
+  updateExperiences(experienceId, req.body)
     .then((data) => {
-      res.status(200).end(data);
+      res.status(200).end(data.rows);
     })
     .catch((err) => {
       res.status(400).send({
@@ -72,9 +75,9 @@ app.delete('/api/experiences/:id', (req, res) => {
   const experienceId = parseInt(req.params.id, 10);
   // console.log(req.body);
   // res.status(200).end(JSON.stringify(req.body));
-  db.deleteExperiences(experienceId)
+  deleteExperiences(experienceId)
     .then((data) => {
-      res.status(200).end(data);
+      res.status(200).end(data.rows);
     })
     .catch((err) => {
       res.status(400).send({
